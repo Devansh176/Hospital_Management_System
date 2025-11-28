@@ -1,5 +1,6 @@
 package com.project.hospitalManagement;
 
+import com.project.hospitalManagement.dto.BloodGroupResponseEntity;
 import com.project.hospitalManagement.entity.Patient;
 import com.project.hospitalManagement.repository.PatientRepository;
 import com.project.hospitalManagement.service.PatientService;
@@ -7,6 +8,9 @@ import com.project.hospitalManagement.type.BloodGroupType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -38,9 +42,19 @@ public class PatientTests {
                 );
 
 //        List<Patient> patientList = patientRepository.findByNameContaining("ma");
-//        for(Patient pt : patientList) System.out.println(pt);
 
-        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroupType.A_POSITIVE);
-        System.out.println(patientList);
+//        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroupType.A_POSITIVE);
+//        System.out.println(patientList);
+
+        Page<Patient> patientList = patientRepository.findAllPatients(PageRequest.of(1, 2));
+        for(Patient pt : patientList) System.out.println(pt);
+
+//        int rowsUpdated = patientRepository.updateNameWithId("Shreyas Iyer", 4L);
+//        System.out.println(rowsUpdated);
+
+//        List<BloodGroupResponseEntity> bloodGroupList = patientRepository.countEachBloodGroupType();
+//        for(BloodGroupResponseEntity bloodGroupResponseEntity : bloodGroupList) {
+//            System.out.println(bloodGroupResponseEntity);
+//        }
     }
 }
