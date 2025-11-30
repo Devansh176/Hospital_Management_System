@@ -1,7 +1,7 @@
 package com.project.hospitalManagement.dto;
 
 
-import com.project.hospitalManagement.type.BloodGroupType;
+import com.project.hospitalManagement.entity.type.BloodGroupType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -2,7 +2,7 @@ package com.project.hospitalManagement.repository;
 
 import com.project.hospitalManagement.dto.BloodGroupResponseEntity;
 import com.project.hospitalManagement.entity.Patient;
-import com.project.hospitalManagement.type.BloodGroupType;
+import com.project.hospitalManagement.entity.type.BloodGroupType;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
