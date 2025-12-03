@@ -27,6 +27,6 @@ public class Doctor {
     @Column(nullable = false, unique = true, length = 50)
     private String email;
 
-    @ManyToMany(mappedBy = "doctors")
+     @ManyToMany(mappedBy = "doctors")
     private Set<Department> departments = new HashSet<>();
 }
